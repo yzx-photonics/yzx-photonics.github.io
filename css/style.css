@@ -401,6 +401,109 @@ p {
   font-weight: 700;
 }
 
+.message-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.message-head {
+  margin-bottom: 0;
+}
+
+.message-form,
+.message-output {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.message-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.message-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.message-form input,
+.message-form select,
+.message-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+
+.message-form input,
+.message-form select {
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+.message-form textarea {
+  resize: vertical;
+  min-height: 150px;
+  padding: 12px 14px;
+}
+
+.message-form input:focus,
+.message-form select:focus,
+.message-form textarea:focus {
+  outline: 3px solid #d1e9ff;
+  border-color: var(--blue);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form-status {
+  color: var(--muted);
+  min-height: 28px;
+}
+
+.message-output {
+  grid-column: 2;
+}
+
+.message-output h3 {
+  margin-bottom: 12px;
+}
+
+.message-output pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--ink);
+  font: 15px/1.7 "Microsoft YaHei", Arial, sans-serif;
+}
+
+.message-output p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
 .site-footer {
   padding: 34px 0;
   color: #d0d5dd;
@@ -456,8 +559,13 @@ p {
 
   .hero-grid,
   .split,
-  .contact-grid {
+  .contact-grid,
+  .message-layout {
     grid-template-columns: 1fr;
+  }
+
+  .message-output {
+    grid-column: 1;
   }
 
   .card-grid.three,
@@ -493,6 +601,10 @@ p {
   }
 
   .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
     grid-template-columns: 1fr;
   }
 

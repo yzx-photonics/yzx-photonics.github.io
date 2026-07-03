@@ -52,6 +52,58 @@
         </div>
       </div>
     </section>
+
+    <section class="section alt">
+      <div class="container message-layout">
+        <div class="section-head message-head">
+          <p class="eyebrow">Online Message</p>
+          <h2>在线留言</h2>
+          <p>请留下合作需求、技术交流或 PoC 意向。提交后会生成标准留言内容，可复制后通过微信发送给我们。</p>
+        </div>
+        <form class="message-form" id="messageForm">
+          <div class="form-row">
+            <label>
+              姓名
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              单位/团队
+              <input type="text" name="organization" autocomplete="organization">
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              联系方式
+              <input type="text" name="contact" autocomplete="tel" placeholder="手机号 / 微信 / 邮箱" required>
+            </label>
+            <label>
+              合作主题
+              <select name="topic">
+                <option value="旸芯 PDA 产品咨询">旸芯 PDA 产品咨询</option>
+                <option value="PoC 验证合作">PoC 验证合作</option>
+                <option value="科研/高校合作">科研/高校合作</option>
+                <option value="工艺/设备/测试集成">工艺/设备/测试集成</option>
+                <option value="其他合作">其他合作</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            留言内容
+            <textarea name="message" rows="6" placeholder="请简单描述您的需求、应用场景或希望交流的问题。" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">生成留言</button>
+            <button class="btn secondary" type="button" id="copyMessage" disabled>复制留言</button>
+          </div>
+          <p class="form-status" id="messageStatus" role="status"></p>
+        </form>
+        <div class="message-output" id="messageOutput" hidden>
+          <h3>留言内容</h3>
+          <pre id="messagePreview"></pre>
+          <p>复制后添加微信 15623326967 发送即可，我们会尽快回复。</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
